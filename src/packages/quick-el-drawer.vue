@@ -161,7 +161,8 @@ export default {
           'update:visible': v => (this.visible = v),
           'update:title': v => (this.title = v),
           'update:disabled-keys': v => (this.buttonDisabledKeys = v),
-          'update:loading-keys': v => (this.buttonLoadingKeys = v)
+          'update:loading-keys': v => (this.buttonLoadingKeys = v),
+          ...on
         }
       })
     }

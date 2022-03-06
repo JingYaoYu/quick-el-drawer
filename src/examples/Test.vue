@@ -1,5 +1,8 @@
 <template>
-  <el-button @click="handleSubmit">测试</el-button>
+  <div>
+    <el-button @click="handleSubmit">测试</el-button>
+    <el-button @click="test">测试1</el-button>
+  </div>
 </template>
 
 <script>
@@ -7,12 +10,8 @@ export default {
   name: 'Test',
   data: () => ({ b: 2 }),
   methods: {
-    open3() {
-      this.quickElDrawerShow({
-        title: 'open3',
-        width: '50%',
-        component: 'open3'
-      })
+    test() {
+      this.$emit('test', '哈哈哈 test')
     },
     handleSubmit() {
       this.quickElDrawerShow({
