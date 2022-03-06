@@ -4,6 +4,7 @@ export default {
   data: () => ({
     title: null,
     width: '60%',
+    cacheWidth: '60%',
     direction: 'rtl',
     showClose: true,
     closeOnClickModal: true,
@@ -11,6 +12,7 @@ export default {
     modalAppendToBody: false,
     animation: false,
     showCancelButton: false,
+    fullscreen: false,
     appendToBody: true,
     modal: true,
     center: false,
@@ -89,6 +91,7 @@ export default {
       component,
       onButtonClicked,
       onClose,
+      cacheWidth,
       on,
       modal
     } = this
@@ -98,6 +101,15 @@ export default {
       return [
         h('strong', { slot: 'title' }, title),
         h('span', { slot: 'title' }, [
+          h('i', {
+            class: `${this.fullscreen ? 'el-icon-news' : 'el-icon-full-screen'} fullscreen-icon`,
+            on: {
+              click: () => {
+                this.fullscreen = !this.fullscreen
+                this.cacheWidth = this.fullscreen ? '100%' : this.width
+              }
+            }
+          }),
           showClose && h('i', { on: { click: () => (this.visible = false) }, class: 'el-icon-close' })
         ])
       ]
@@ -158,7 +170,7 @@ export default {
       {
         props: {
           title,
-          size: width,
+          size: cacheWidth === '100%' ? cacheWidth : width,
           center,
           visible,
           direction,
@@ -189,6 +201,7 @@ export default {
 .quick-el-drawer {
   display: flex;
   flex-direction: column;
+  transition: width cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s;
 }
 .quick-el-drawer .el-drawer__header {
   padding: 0 20px;
