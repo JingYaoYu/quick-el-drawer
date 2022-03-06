@@ -14,6 +14,7 @@ export default {
     showCancelButton: false,
     fullscreen: false,
     appendToBody: true,
+    destroyOnClose: true,
     modal: true,
     center: false,
     visible: false,
@@ -45,7 +46,7 @@ export default {
           clearTimeout(timer)
         }, 400)
       }
-      this.beforeClose ? this.beforeClose(destroyState) : destroyState()
+      destroyState()
     },
     async onButtonClicked(button) {
       if (!button.callback) return
@@ -90,6 +91,8 @@ export default {
       callback,
       component,
       onButtonClicked,
+      destroyOnClose,
+      beforeClose,
       onClose,
       cacheWidth,
       on,
@@ -183,8 +186,9 @@ export default {
           wrapperClosable: closeOnClickModal,
           closeOnPressEscape,
           modalAppendToBody,
+          beforeClose: beforeClose ? done => beforeClose(done) : null,
           appendToBody,
-          destroyOnClose: true
+          destroyOnClose
         },
         on: { ...on, close: onClose }
       },

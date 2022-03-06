@@ -13,6 +13,9 @@ export default {
       this.quickElDrawerShow({
         title: '测试标题',
         component: Test,
+        beforeClose: d => {
+          setTimeout(d, 3000)
+        },
         showCancelButton: true,
         buttons: [{ text: '测试', callback: 'handleSubmit' }]
       })
