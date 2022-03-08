@@ -220,7 +220,7 @@ export default {
 
 .quick-el-drawer .quick-drawer__content {
   padding: 15px;
-  height: 100%;
+  /* height: 100%; */
 }
 .quick-el-drawer .el-drawer__body {
   flex-grow: 1;
@@ -244,6 +244,7 @@ export default {
   bottom: 0;
   width: 100%;
   background: #fff;
+  z-index: 100;
 }
 
 .quick-el-drawer .el-drawer__header i {
