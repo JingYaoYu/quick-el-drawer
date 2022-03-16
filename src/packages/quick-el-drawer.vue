@@ -135,7 +135,7 @@ export default {
               props: {
                 type: button.type || 'primary',
                 icon: button.icon,
-                size: button.size || 'medium',
+                size: button.size || 'small',
                 loading: loading || button.loading || buttonLoadingKeys.includes(button.name),
                 disabled: button.disabled || buttonDisabledKeys.includes(button.name)
               },
@@ -217,7 +217,9 @@ export default {
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 0;
 }
-
+.quick-el-drawer .el-drawer__header strong {
+  color: #000;
+}
 .quick-el-drawer .quick-drawer__content {
   padding: 15px;
   /* height: 100%; */
