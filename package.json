@@ -10,6 +10,16 @@
     "build": "vue-cli-service build --target lib --name quick-el-drawer --dest dist ./src/packages/index.js",
     "release": "npm run build && npm version patch && npm publish --access public"
   },
+  "keywords": [
+    "quick-drawer",
+    "el-drawer",
+    "element-ui drawer",
+    "quick-el-drawer"
+  ],
+  "homepage": "https://github.com/imaxing/quick-el-drawer",
+  "repository": {
+    "url": "https://github.com/imaxing/quick-el-drawer"
+  },
   "files": [
     "dist/quick-el-drawer.umd.min.js",
     "package.json",
