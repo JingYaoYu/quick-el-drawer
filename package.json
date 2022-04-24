@@ -1,6 +1,6 @@
 {
   "name": "@iamgx/quick-el-drawer",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "quick-el-drawer",
   "private": false,
   "main": "./dist/quick-el-drawer.umd.min.js",
