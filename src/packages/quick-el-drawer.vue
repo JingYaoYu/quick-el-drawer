@@ -32,7 +32,9 @@ export default {
   }),
   mounted() {
     this.$once('hook:beforeDestroy', () => (window.onhashchange = null))
-    window.onhashchange = this.onClose()
+    window.onhashchange = () => {
+      this.visible = false
+    }
   },
   beforeDestroy() {
     window.onhashchange = null
