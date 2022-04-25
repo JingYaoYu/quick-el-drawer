@@ -1,6 +1,6 @@
 {
   "name": "@yizhai/quick-el-drawer",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "quick-el-drawer",
   "private": false,
   "main": "./dist/quick-el-drawer.umd.min.js",
