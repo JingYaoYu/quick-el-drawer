@@ -6,13 +6,13 @@
 ## 安装
 
 ```
-npm i @iamgx/quick-el-drawer
+npm i @yizhai/quick-el-drawer
 ```
 
 ## 使用
 
 ``` javascript
-import ElQuickDrawer from '@iamgx/quick-el-drawer'
+import ElQuickDrawer from '@yizhai/quick-el-drawer'
 
 // 简单用法
 ElQuickDrawer({ title: '这是标题', component: '这是内容' })
@@ -64,9 +64,3 @@ ElQuickDrawer({ title: '这是标题',  component: CusomComponent })
 
 [!\[Edit quick-el-drawer-example \\(forked\\)\]\(https://codesandbox.io/static/img/play-codesandbox.svg\)](https://codesandbox.io/s/quick-el-drawer-example-forked-vpcogq?fontsize=14&hidenavigation=1&theme=dark)
 
-## 其他工具
-
-* [quick-el-modal](https://github.com/imaxing/quick-el-modal)
-* [quick-modal\(an-design-vue版本\)](https://github.com/imaxing/quick-modal)
-* [quick-drawer\(an-design-vue版本\)](https://github.com/imaxing/quick-modal)
-* [element-pro-layout](https://github.com/imaxing/element-pro-layout)
