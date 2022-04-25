@@ -33,9 +33,6 @@ export default {
   mounted() {
     this.$once('hook:beforeDestroy', () => (window.onhashchange = null))
     window.onhashchange = this.onClose()
-    // window.onhashchange = () => {
-    //   this.visible = false
-    // }
   },
   beforeDestroy() {
     window.onhashchange = null
@@ -61,15 +58,12 @@ export default {
     },
     async onButtonClicked(button) {
       if (!button.callback) return
-
       if (button.confirm) {
         const state = window.confirm(`是否确认${button.text}?`)
         if (!state) return
       }
-
       const child =
         (typeof this.component === 'function' ? this.$children[0].$children.pop() : this.$refs.modalChild) || {}
-
       if (typeof button.callback === 'string') {
         child && child[button.callback] && child[button.callback]({ modal: this })
         return
@@ -110,7 +104,6 @@ export default {
       on,
       modal
     } = this
-
     const renderHeader = () => {
       if (!title) return null
       return [
@@ -129,13 +122,11 @@ export default {
         ])
       ]
     }
-
     const renderFooter = () => {
       if (!showCancelButton && buttons.length <= 0) return null
       const cancelButton = showCancelButton
         ? [{ text: '取消', type: 'default', callback: () => (this.visible = false) }]
         : []
-
       return h(
         'div',
         { class: 'quick-drawer__footer' },
@@ -158,7 +149,6 @@ export default {
         )
       )
     }
-
     const renderContent = () => {
       const events = {
         callback: params => callback && callback(params || this),
@@ -174,14 +164,12 @@ export default {
       if (typeof component === 'string') {
         return componentIsTag ? h(component, { props, on: events }) : component
       }
-
       return h(component, {
         ref: 'modalChild',
         props,
         on: events
       })
     }
-
     const Footer = renderFooter()
     const Content = renderContent()
     return h(
@@ -263,7 +251,6 @@ export default {
   background: #fff;
   z-index: 100;
 }
-
 .quick-el-drawer .el-drawer__header i {
   color: #909399;
   cursor: pointer;
